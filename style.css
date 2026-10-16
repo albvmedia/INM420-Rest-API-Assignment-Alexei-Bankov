@@ -1,0 +1,176 @@
+/* css reset removes the default browser spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* colors used across the page */
+:root {
+  --night: #0c1226;
+  --panel: #151d3a;
+  --starlight: #e8ecf8;
+  --dust: #9aa6c8;
+  --glow: #7cc4ff;
+}
+
+/* page layout, background and base text */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--night);
+  background-image: radial-gradient(circle at 20% 10%, #1b2750 0, transparent 45%);
+  color: var(--starlight);
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* header and main title */
+header {
+  text-align: center;
+  padding: 3rem 1rem 1.5rem;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+header p {
+  color: var(--dust);
+  margin-top: 0.5rem;
+}
+
+/* main content area */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* date picker box */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: var(--panel);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+label {
+  color: var(--dust);
+}
+
+/* date input and button */
+input, button {
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.35rem;
+  border: 1px solid var(--dust);
+}
+
+input {
+  background-color: var(--night);
+  color: var(--starlight);
+  color-scheme: dark;
+}
+
+button {
+  background-color: var(--glow);
+  border-color: var(--glow);
+  color: var(--night);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--starlight);
+}
+
+/* clear outline when using the keyboard */
+input:focus-visible, button:focus-visible {
+  outline: 3px solid var(--starlight);
+  outline-offset: 2px;
+}
+
+/* loading and error message */
+#status {
+  text-align: center;
+  color: var(--dust);
+  margin: 1rem 0;
+}
+
+/* the api result, title, date and description */
+#result {
+  margin-top: 1.5rem;
+}
+
+#result[hidden] {
+  display: none;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 400;
+}
+
+#date {
+  color: var(--glow);
+  margin-bottom: 1rem;
+}
+
+#description {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 42rem;
+  margin-top: 1.5rem;
+}
+
+#credit {
+  color: var(--dust);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+/* picture max-width keeps them inside the screen */
+figure {
+  background-color: var(--panel);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* footer */
+footer {
+  text-align: center;
+  color: var(--dust);
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+}

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NASA Picture of the Day</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- page title and short intro -->
+    <header>
+      <h1>NASA Picture of the Day</h1>
+      <p>Pick any date since June 16, 1995 to see what NASA featured that day.</p>
+    </header>
+
+    <main>
+      <!-- date picker and random button the user changes the api date here -->
+      <section class="controls">
+        <label for="date-input">Choose a date</label>
+        <input type="date" id="date-input">
+        <button type="button" id="random-button">Surprise me</button>
+      </section>
+
+      <!-- loading and error messages show here -->
+      <p id="status" role="status"></p>
+
+      <!-- the api result hidden until the data loads javascript fills this in -->
+      <article id="result" hidden>
+        <h2 id="title"></h2>
+        <p id="date"></p>
+        <figure id="media"></figure>
+        <p id="description"></p>
+        <p id="credit"></p>
+      </article>
+    </main>
+
+    <footer>
+      <p>Data from the NASA Astronomy Picture of the Day API.</p>
+    </footer>
+  </body>
+</html>
